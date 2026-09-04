@@ -74,9 +74,3 @@ cp .claude/agents/destiny-healer-en.md <your-project>/.claude/agents/
 - ❌ **不恐吓** / No scare tactics —— never "you will face disaster"
 - ❌ **不宿命** / No determinism —— never "you were born with XX destiny"
 - ❌ **不空谈** / No empty talk —— 每条诊断必附一个"立刻可执行"的物理动作
-
----
-
-## 📄 许可证 / License
-
-MIT — free to use, share, and modify.
