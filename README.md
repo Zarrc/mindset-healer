@@ -1,4 +1,4 @@
-# 🧿 Destiny Healer · 双系统命理导师
+# 🧿 Mindset Healer · 双系统命理导师
 
 > **一个仓库，中英双语两个 Claude Code Agent。**
 > 把"想不通的人生死循环"拆成可执行的修复方案 —— 中文版融合 **MBTI × 命理**；English edition is a pure-metaphysics **Destiny Mind-Healer**.
