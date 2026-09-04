@@ -1,92 +1,82 @@
-# 🧿 双系统命理导师 · Destiny Healer（Claude Code Agent）
+# 🧿 Destiny Healer · 双系统命理导师
 
-> **MBTI × 八字/紫微/易经 的"认知-能量"二元诊断 Agent。**
-> 把一个"想不通的人生死循环"，拆成认知层的神经回路问题 + 能量层的命理病灶，再给出一套立即可执行的修复方案。
-
----
-
-## ✨ 功能
-
-| 能力 | 说明 |
-|------|------|
-| 🧩 **行为拆解** | 从你描述的死循环反推主导 / 辅助 / 劣势认知功能 |
-| ⚖️ **命理验证** | 用八字强弱 / 紫微宫位 / 星曜化象交叉验证病灶 |
-| 💊 **联合处方** | 同时给「MBTI 认知训练（改写回路）+ 命理能量操作（补喜用神）」 |
-| ⏱️ **防空谈** | 每次诊断必附"下一小时就能做的物理动作" |
+> **一个仓库，中英双语两个 Claude Code Agent。**
+> 把"想不通的人生死循环"拆成可执行的修复方案 —— 中文版融合 **MBTI × 命理**；English edition is a pure-metaphysics **Destiny Mind-Healer**.
 
 ---
 
-## 🚀 安装
+## 📦 一个仓库，两个 Agent
 
-本仓库包含一个 Claude Code 子代理定义：
+| Agent | 文件 | 语言 / 取向 | 特点 |
+|-------|------|-------------|------|
+| **双系统命理导师** | `.claude/agents/destiny-healer.md` | 中文 · MBTI × 八字/紫微/易经 | 从认知层（MBTI 功能）和能量层（命理病灶）交叉验证，给出"认知-能量"二元处方 |
+| **Destiny Mind-Healer** | `.claude/agents/destiny-healer-en.md` | English · Bazi / Ziwei / Yijing | Translates metaphysics into engineering instructions; root-cause verdict + executable "destiny patch code" |
 
-```
-destiny-healer/
-├── README.md
-└── .claude/
-    └── agents/
-        └── destiny-healer.md   ← Agent 定义
-```
+两个文件的 `name` 不同（`destiny-healer` / `destiny-healer-en`），**可以同时安装**，互不冲突。
 
-### 方式 A：装到全局（推荐，任意项目可用）
+---
+
+## 🚀 安装 / Install
 
 ```bash
+# 装到全局（推荐，任意项目可用） / Global (available in every project)
 mkdir -p ~/.claude/agents
-cp .claude/agents/destiny-healer.md ~/.claude/agents/
+cp .claude/agents/destiny-healer.md    ~/.claude/agents/   # 中文版 Chinese
+cp .claude/agents/destiny-healer-en.md ~/.claude/agents/   # English
+
+# 或只装到某个项目 / Or install for one project only
+mkdir -p <your-project>/.claude/agents
+cp .claude/agents/destiny-healer-en.md <your-project>/.claude/agents/
 ```
 
-### 方式 B：只装到某个项目
+装好后 **重启 Claude Code**。
 
-```bash
-mkdir -p <你的项目>/.claude/agents
-cp .claude/agents/destiny-healer.md <你的项目>/.claude/agents/
-```
-
-装好后 **重启 Claude Code**，然后直接对 Claude 说：
-
-> "让 destiny-healer 帮我诊断一下我最近的状态"
->
-> "用命理导师分析我为什么总是想好了才做、却永远不开始"
-
-主代理会根据描述自动调度该 Agent，它会按 **采集症状 → MBTI 拆解 → 命理验证 → 联合处方** 四步走。
-
-> 💡 也可以直接把 `destiny-healer.md` 当系统提示词贴到任意 AI 对话框使用（如 claude.ai）。
-
-> ⚠️ 若你想同时在全局装中英两个版本，请把其中一个文件的 `name:` 和文件名改掉（如改成 `destiny-healer-zh`），避免同名冲突。
+> 💡 也可以直接把 `.md` 当系统提示词贴到任意 AI 对话框使用（如 claude.ai）。
 
 ---
 
-## 🧠 诊断逻辑
+## 💬 使用 / Usage
+
+**中文**（对 Claude 说）：
+> "让 destiny-healer 帮我诊断为什么我总想好了才做、却永远不开始"
+> "用命理导师分析我最近的状态"
+
+**English**（tell Claude）：
+> "Use the destiny-healer-en agent to diagnose why I keep overthinking and never act."
+> "Ask Destiny Mind-Healer for a root-cause analysis of my current block."
+
+主代理会根据描述自动调度对应语言的 Agent。
+
+---
+
+## 🧠 诊断逻辑 / Diagnostic logic
 
 ```
-你的症状描述
-      ↓
-① 行为现象采集   —— 记录"死循环"
-      ↓
-② MBTI 层拆解   —— 找到过度驱动的主导功能 + 被压抑的劣势功能
-      ↓
-③ 命理层验证   —— 用八字/紫微星曜给认知模式找"能量病灶"
-      ↓
-④ 联合处方      —— A. 认知训练  +  B. 补喜用神 +  "下一小时的物理动作"
+你的症状描述 / Your symptom
+        ↓
+① 行为现象采集  /  Observation   —— 记录"死循环"，不跳步下结论
+        ↓
+② 认知层 / 命理层 拆解          —— MBTI 功能 or Bazi/Ziwei/Yijing 交叉验证病灶
+        ↓
+③ 联合处方 / Prescription      —— 反直觉、可执行的修复指令
+        ↓
+④ 落地与跟进 / Follow-up       —— "下一小时的物理动作" + 截止锚点
 ```
 
-- 命理 = 能量底层的硬限制；MBTI = 认知层的行为模式。**单看哪一个都是盲人摸象。**
+- 中文版补充说明：命理 = 能量底层硬限制，MBTI = 认知层行为模式，**单看哪个都是盲人摸象**。
 - 提供出生时间（年月日时）可增强八字/紫微验证；不提供则按能量状态推断，不影响流程。
+- Note: the chart is the **factory default setting**; your actions are the **system patches**.
 
 ---
 
-## 🚫 设计红线
+## 🚫 设计红线 / Red lines
 
-- ❌ **不恐吓**：不说"你会遭灾"
-- ❌ **不宿命**：不说"你天生就是 XX 命"——命盘是出厂设置，行动是系统补丁
-- ❌ **不空谈**：每条诊断都附一个"立刻可执行"的物理动作
-
----
-
-## 📄 许可证
-
-MIT — 自由使用、分享、修改。
+- ❌ **不恐吓** / No scare tactics —— never "you will face disaster"
+- ❌ **不宿命** / No determinism —— never "you were born with XX destiny"
+- ❌ **不空谈** / No empty talk —— 每条诊断必附一个"立刻可执行"的物理动作
 
 ---
 
-📌 **中文版**（含 MBTI 认知功能层）。想要纯命理的英文版 `Destiny Mind-Healer`？→ 见姊妹仓库 **`destiny-healer-en`**。
+## 📄 许可证 / License
+
+MIT — free to use, share, and modify.
