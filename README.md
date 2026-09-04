@@ -1,7 +1,7 @@
-# 🧿 Destiny Healer · 双系统命理导师
+# 🧿 Mindset Healer · 双系统命理导师
 
 > **一个仓库，中英双语两个 Claude Code Agent。**
-> 把"想不通的人生死循环"拆成可执行的修复方案 —— 中文版融合 **MBTI × 命理**；English edition is a pure-metaphysics **Destiny Mind-Healer**.
+> 把"想不通的人生死循环"拆成可执行的修复方案 —— 中文版融合 **MBTI × 命理**；English edition is a pure-metaphysics **Mindset Healer**.
 
 ---
 
@@ -9,10 +9,10 @@
 
 | Agent | 文件 | 语言 / 取向 | 特点 |
 |-------|------|-------------|------|
-| **双系统命理导师** | `.claude/agents/destiny-healer.md` | 中文 · MBTI × 八字/紫微/易经 | 从认知层（MBTI 功能）和能量层（命理病灶）交叉验证，给出"认知-能量"二元处方 |
-| **Destiny Mind-Healer** | `.claude/agents/destiny-healer-en.md` | English · Bazi / Ziwei / Yijing | Translates metaphysics into engineering instructions; root-cause verdict + executable "destiny patch code" |
+| **双系统命理导师** | `.claude/agents/mindset-healer.md` | 中文 · MBTI × 八字/紫微/易经 | 从认知层（MBTI 功能）和能量层（命理病灶）交叉验证，给出"认知-能量"二元处方 |
+| **Mindset Healer** | `.claude/agents/mindset-healer-en.md` | English · Bazi / Ziwei / Yijing | Translates metaphysics into engineering instructions; root-cause verdict + executable patches |
 
-两个文件的 `name` 不同（`destiny-healer` / `destiny-healer-en`），**可以同时安装**，互不冲突。
+两个文件的 `name` 不同（`mindset-healer` / `mindset-healer-en`），**可以同时安装**，互不冲突。
 
 ---
 
@@ -21,12 +21,12 @@
 ```bash
 # 装到全局（推荐，任意项目可用） / Global (available in every project)
 mkdir -p ~/.claude/agents
-cp .claude/agents/destiny-healer.md    ~/.claude/agents/   # 中文版 Chinese
-cp .claude/agents/destiny-healer-en.md ~/.claude/agents/   # English
+cp .claude/agents/mindset-healer.md    ~/.claude/agents/   # 中文版 Chinese
+cp .claude/agents/mindset-healer-en.md ~/.claude/agents/   # English
 
 # 或只装到某个项目 / Or install for one project only
 mkdir -p <your-project>/.claude/agents
-cp .claude/agents/destiny-healer-en.md <your-project>/.claude/agents/
+cp .claude/agents/mindset-healer-en.md <your-project>/.claude/agents/
 ```
 
 装好后 **重启 Claude Code**。
@@ -38,12 +38,12 @@ cp .claude/agents/destiny-healer-en.md <your-project>/.claude/agents/
 ## 💬 使用 / Usage
 
 **中文**（对 Claude 说）：
-> "让 destiny-healer 帮我诊断为什么我总想好了才做、却永远不开始"
+> "让 mindset-healer 帮我诊断为什么我总想好了才做、却永远不开始"
 > "用命理导师分析我最近的状态"
 
 **English**（tell Claude）：
-> "Use the destiny-healer-en agent to diagnose why I keep overthinking and never act."
-> "Ask Destiny Mind-Healer for a root-cause analysis of my current block."
+> "Use the mindset-healer-en agent to diagnose why I keep overthinking and never act."
+> "Ask Mindset Healer for a root-cause analysis of my current block."
 
 主代理会根据描述自动调度对应语言的 Agent。
 
